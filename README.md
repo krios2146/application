@@ -1,6 +1,8 @@
 # application
-This is my first spring project
+This is my first spring project 
+It's very simple site 
 
-It's very simple site, that shows some records from DB and allows you to add a new record or delete an existing one 
-
-I start learn java on March of 2022
+For now it can:
+- show some records from DB
+- add a new record
+- delete an existing one
