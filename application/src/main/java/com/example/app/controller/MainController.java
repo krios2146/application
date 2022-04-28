@@ -28,8 +28,14 @@ public class MainController {
 	
 	@PostMapping("/add")
 	public String add(@RequestParam String name, @RequestParam Integer cost, @RequestParam String link, Map<String, Object> model) {
+		if (name == null || cost == null || link == null) {
+			model.put("addMessage", "Inputs cannot be empty");
+			main(model);
+			return "main";
+		}
 		
 		Food food = new Food();
+		
 		food.setName(name);
 		food.setCost(cost);
 		food.setLink(link);
