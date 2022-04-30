@@ -24,7 +24,7 @@
 	        <div style = "width: 5%">${food.id}</div>
 	        <div style = "width: 40%">${food.name}</div>
 	        <div style = "width: 15%">${food.cost}</div>
-	        <div style = "width: 40%">${food.link}</div>
+	        <div style = "width: 40%"><a href="${food.link}">${food.link}</a></div>
 	    </div>
 	    </#list>
     </div>

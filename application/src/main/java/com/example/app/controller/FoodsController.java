@@ -53,7 +53,7 @@ public class FoodsController {
 		try {
 			foodRepo.deleteById(id);
 		} catch (Exception e) {
-			model.put("delMessage", e.getMessage());
+			model.put("delMessage", "Id not found");
 		}
 		
 		main(model);
