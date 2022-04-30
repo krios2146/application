@@ -13,17 +13,17 @@ import com.example.app.domain.Food;
 import com.example.app.repos.FoodRepo;
 
 @Controller
-public class MainController {
+public class FoodsController {
 	@Autowired 
 	private FoodRepo foodRepo;
 	
-	@GetMapping("/main")
+	@GetMapping("/foods")
 	public String main(Map<String, Object> model) {
 		Iterable<Food> foods = foodRepo.findAll();
 		
 		model.put("foods", foods);
 		
-		return "main";
+		return "foods";
 	}
 	
 	@PostMapping("/add")
@@ -31,7 +31,7 @@ public class MainController {
 		if (name == null || cost == null || link == null) {
 			model.put("addMessage", "Inputs cannot be empty");
 			main(model);
-			return "main";
+			return "foods";
 		}
 		
 		Food food = new Food();
@@ -44,7 +44,7 @@ public class MainController {
 		
 		main(model);
 		
-		return "main";
+		return "foods";
 	}
 	
 	@PostMapping("/delete")
@@ -58,7 +58,7 @@ public class MainController {
 		
 		main(model);
 		
-		return "main";
+		return "foods";
 	}
 	
 }
